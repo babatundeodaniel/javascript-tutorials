@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id='first' class="displays" data-id="">
+
+    </div>
+    <div id="first" class="displays">
+
+    </div>
+    <div id="second" class="displays"></div>
+    <div id="third" class="displays"></div>
+    <form action="">
+        <div>
+            <label>Input</label>
+            <input type="text" name="input_1" id="input_1">
+        </div>
+        <div><input type="button" value="calculate" onclick="calculateFactorial()"></div>
+    </form>
+    <script type="text/javascript">
+        // n! = n * (n - 1)!
+        // 1! = 1;
+        function factorial(n) {
+            // if(n == 1){
+            //     return 1;
+            // } else {
+            //     return n * factorial(n-1);
+            // }
+            console.log("n", n);
+            if (n > 0) {
+                return (n == 1) ? 1 : n * factorial(n - 1);
+            } else {
+                return;
+            }
+        }
+        // console.log(factorial(3));
+        // console.log(factorial(10));
+        //var first = document.getElementById('first');
+        // first.innerText = "three factorial" + factorial(3)
+        //first.innerText = `<a href="google.com">${factorial(3)}</a>`
+        //first.style = 'color:red; border:2px solid; border-radius:5px; width:100px;'
+        //var displays = document.getElementsByClassName('displays')
+        // var tem_fatorial = "10 factorial" + factorial(10);
+        // displays.innerHTML(tem_fatorial)
+        //console.log(displays);
+        // for(const i = 0; i <= displays.length; i++){
+        //     displays[i].innerHTML = tem_fatorial
+        // }
+        // 1. Animation; slide up, slide 
+        // 2. Validation of input
+        // 3. User experience. focus, scroll to a portion
+        // 4. 
+        //sconsole.log(factorial(20));
+        function calculateFactorial() {
+            var i_1 = document.getElementById('input_1').value
+            document.getElementById('first').innerText = "";
+            document.getElementById('second').innerText = "";
+            console.log(i_1);
+            if (isNaN(i_1)) {
+                document.getElementById('input_1').style = 'border-color: red';
+                console.log("This input is not a number try again")
+                document.getElementById('second').innerText = "This input is not a number try again";
+                document.getElementById('second').style = "color:red; font-size: 20px;"
+            } else {
+                var first = document.getElementById('first');
+                first.innerHTML = `<a href="google.com">i_1 factorial ${factorial(i_1)}</a>`
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
